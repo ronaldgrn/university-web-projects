@@ -1,0 +1,30 @@
+canvas {
+  border: 1px solid black;
+  margin: 0 auto;
+  position: absolute;
+  top: 28px; left: 0; bottom: 0; right: 0;
+}
+
+#bgCanvas {
+  background-color:  #008080;
+  background-image: url("../images/background.JPG");
+  background-size: 30%;
+  background-repeat: repeat;
+}
+
+.target {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.instruct{
+	padding-left: 50px;
+}
+
+#endbox {
+  background-color:  #008080;
+}
+
+body {
+  padding-top: 70px;
+}

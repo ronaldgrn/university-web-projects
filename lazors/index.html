@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style>
+        canvas {
+            position: absolute;
+            left 0px;
+            top: 50px;
+        }
+
+        #myCanvas {
+            background-image: url("background.png");
+            z-index: 5;
+        }
+
+        #projectileCanvas {
+            z-index: 10;
+            /* background-color: lightgrey; */
+        }
+    </style>
+</head>
+<body>
+    <p>Control with w, a, s, d. Fire with q</p>
+  	<canvas id="myCanvas" width="800" height="800" style="background-color: lightgrey"></canvas>
+    <canvas id="projectileCanvas" width="800" height="800"></canvas>
+    <script>
+        function Ship(){
+            this.x = 0, this.y = 0;
+            this.width, this.height;
+
+            this.create = function(){
+                this.width = 150;
+                this.height = 170;
+
+                img = new Image();
+                img.addEventListener("load", function() {
+                    ctx.drawImage(img, this.x, this.y);
+                }, false);
+                img.src = 'ship.png'; // Set source path
+            }
+
+            this.clear = function(){
+                console.log("clearing");
+                ctx.clearRect(0, 0, 800, 800);
+            }
+
+            this.draw = function(){
+                ctx.drawImage(img, this.x, this.y);
+            }
+
+            this.move = function(key){
+                console.log(key);
+                switch(key){
+                    case 97: this.x -= 4;
+                        break;
+                    case 100: this.x += 4;
+                        break;
+                    case 115: this.y += 4;
+                        break;
+                    case 119: this.y -= 4;
+                        break;
+                }
+
+                this.clear();
+                this.draw();
+            }
+
+            this.fire = function(){
+                new Projectile((this.x + (this.width * 0.90)), (this.y + (this.height / 2) - 3) );
+            }
+
+
+            this.create();
+        }
+
+
+        // IMMA FIRING MA LAZORSSS
+        function Projectile(x, y){
+            this.x = x;
+            this.y = y;
+            this.length = 20;
+            this.width = 6;
+
+            this.draw = function(){
+                this.clear();
+                pctx.fillStyle = "red";
+                pctx.fillRect(this.x, this.y, this.length, this.width);
+            }
+
+            this.clear = function(){
+                // clear ONLY last area of this instance
+                pctx.clearRect(this.x - this.length, this.y, this.length, this.width);
+
+                // debug erasure
+                // pctx.fillStyle = "blue";
+                // pctx.fillRect(this.x - this.length, this.y, this.length, this.width);
+            }
+
+
+            this.go = function(){
+                this.x = this.x + 8;
+                console.log(this.x);
+                this.draw();
+
+                // destroy projectile when offscreen
+                if(this.x > 800){
+                    clearInterval(this.firingID);
+                }
+            }
+
+            this.draw();
+            this.firingID = setInterval(this.go.bind(this), 20);
+
+        }
+
+        function handlekeys(key){
+            switch(key.charCode){
+                case 97:
+                case 115:
+                case 119:
+                case 100: Battleship.move(key.charCode);
+                    break;
+                case 113: Battleship.fire();
+                    break;
+                default: console.log(key.charCode)
+            }
+        }
+
+        window.onload=function(){
+		    ctx = document.getElementById("myCanvas").getContext('2d');
+            pctx = document.getElementById("projectileCanvas").getContext('2d');
+            Battleship = new Ship();
+            document.onkeypress = handlekeys;
+		}
+
+    </script>
+</body>
+</html>

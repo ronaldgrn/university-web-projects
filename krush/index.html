@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Krush?</title>
+
+    <link href="css/bootstrap_superhero.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+  <!-- load classes -->
+  <script src="src/Player.js"></script>
+  <script src="src/Zero.js"></script>
+  <script src="src/GreenZero.js"></script>
+  <script src="src/Timer.js"></script>
+  <script src="src/Debris.js"></script>
+  <script src="src/Collisions.js"></script>
+  <script src="src/Projectile.js"></script>
+  </head>
+  <body>
+
+  <!-- navbar -->
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Krush</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://devget.net/projects/krush/" target="_blank">Milestones</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+
+    <div class="container" id="gamebox">
+      <div class="row">
+        <div class="col-xs-3">Zero 1: <span id="health1"></span></div>
+        <div class="col-xs-3 col-xs-offset-1">Zero 2: <span id="health2"></span></div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="target" id="target"></div>
+        </div>
+
+        <div class="col-md-6 instruct">
+          <h2>How to play:</h2>
+          <p>The objective of this game is to kill the other player.</p>
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+
+    <!-- main game script -->
+    <script src="src/main.js"></script>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

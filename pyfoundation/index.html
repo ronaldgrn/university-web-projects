@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>P&amp;Y Green - Home</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+	<div class="grid">
+		<header>
+			<div id="header">
+				<div class="row">
+					<div class="col-1"><a href="index.html"><img src="images/pny_logo2.png" class="logo" alt="logo"></a></div>
+
+					<div class="col-3">
+						<nav>
+							<div class="navbar">
+								<ul>
+									<li><a href="who.html">Who we are</a></li>
+									<li><a href="what.html">What we do</a></li>
+									<li><a href="how.html">How you can help</a></li>
+									<li><a href="contact.html">Contact Us</a></li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div> 
+		</header><!-- END HEADER -->
+		<hr>
+		<div id="content">
+
+    		<div class="row"> <!-- START SLIDEPANEL -->
+		        <div class="col-2">
+		        	<blockquote><p id="caption" class="caption">\"The best way to find yourself is to lose yourself in the service of others.\" ~Mahatma Gandhi</p></blockquote>
+		        </div> 
+		        <div class="col-2">
+		        	<img class="slide fit" id="slide" src="images/slideshow/slide2.jpg" alt="ngo slide" />
+		        </div> 
+		    </div> <!-- END SLIDE PANEL -->
+
+		    <div class="row">
+		        <div class="col-4">
+		        	<h2>World Population</h2>
+		        	<ul>
+		        	<li><p>7 Million</p></li>
+		        	</ul>
+
+		        	<h2>World Hunger</h2>
+		        	<ul>
+			        	<li><p>795 million people, or one in nine people in the world - do not have enough to eat.</p></li>
+			        	<li><p>98% of the world's undernourished people live in developing countries.</p></li>
+			        	<li><p>Where is hunger the worst?</p></li>
+			        	<li><ul>
+			        			<li><p>Asia: 525.6 million</p></li>
+			        			<li><p>Sub-Saharan Africa : 214 million</p></li>
+			        			<li><p><strong>Latin America and the Caribbean: 37 million</strong></p></li>
+		        		</ul></li>
+			        	<li><p>Focusing on our own home. The Petronald and Yoshabel Green Foundation is currently focusing its efforts to the Latin America and Caribbean Countries.</p></li>
+		        	</ul>
+		        </div> 
+		    </div>
+
+		    <br>
+		    <small class="footnote" style="position:relative; top: 5px;">*Population and hunger data from <a href="http://thp.org/" target="_blank">The Hunger Project</a></small>
+		    <br>
+		    <small class="footnote">*Slideshow Images from <a href="http://www.istockphoto.com/" target="_blank">iStock</a></small>
+		</div> <!-- END CONTENT -->
+
+	    <div id="footer">
+	    	<div class="row">
+		        <div class="col-3-1">
+		        	<b>Menu</b>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="who.html">Who we are</a></li>
+						<li><a href="what.html">What we do</a></li>
+						<li><a href="how.html">How you can help</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+					</ul>
+		        </div>
+		        <div class="col-3-1">
+		        	<b>Partners</b>
+					<ul>
+						<li><a href="http://www.oxfam.org.uk/" target="_blank">OXFAM</a></li>
+						<li><a href="http://www.un.org/en/index.html" target="_blank">United Nations</a></li>
+						<li><a href="http://speakintime.com" target="_blank">Speakintime.com</a></li>
+					</ul>
+		        </div>
+		        <div class="col-3-1">
+		        	<b>Social Media</b>
+		        	<div class="social-icons">
+						<a href="http://facebook.com"><img src="images/social/facebook-icon-white.png" width="35" height="35" alt="ngo slide 1"></a>
+
+						<a href="http://facebook.com"><img src="images/social/twitter-512.png" width="35" height="35" alt="ngo slide 2"></a>
+
+						<a href="http://facebook.com"><img src="images/social/instagram-512.png" width="35" height="35" alt="ngo slide 3"></a>
+
+						<a href="http://facebook.com"><img src="images/social/youtube-4-512.png" width="35" height="35" alt="ngo slide 4"></a>
+					</div>
+		        </div>
+		        <div class="col-4">
+		        	<div class="copyright">
+		        	<small>&copy;2015 - Petronald Green</small>
+		        	</div>
+		        </div> 
+		    </div> 
+	    </div> <!-- END FOOTER -->
+
+	</div> <!-- END GRID -->
+
+
+<script> 
+var i = 0;
+var image = new Array();
+var caption= new Array();
+
+
+image[0] = "images/slideshow/slide2.jpg";
+caption[0] = "\"The best way to find yourself is to lose yourself in the service of others.\" <br><br>~Mahatma Gandhi";
+image[1] = "images/slideshow/slide3.jpg";
+caption[1] = "\"Sometimes, reaching out and taking someone's hand is the beginning of a journey.\" <br><br>~Vera Nazarian";
+image[2] = "images/slideshow/slide5.jpg";
+caption[2] = "\"Non nobis solum nati sumus. (Not for ourselves alone are we born).\" <br><br>~Marcus Tullius Cicero";
+image[3] = "images/slideshow/slide6.jpg";
+caption[3] = "\"Since you get more joy out of giving joy to others, you should put a good deal of thought into the happiness that you are able to give.\" <br>~Eleanor Roosevelt";
+
+function nextSlide() 
+{ 
+	document.getElementById("slide").src = image[i]; 
+	document.getElementById("caption").innerHTML = caption[i]; 
+	if(i < image.length - 1) i++; 
+	else i = 0; 
+	setTimeout("nextSlide()",8000); 
+} 
+window.onload=nextSlide; 
+</script> 
+
+</body>
+</html>
